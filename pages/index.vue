@@ -27,10 +27,15 @@
       </button>
     </div>
   </div>
+  
+  <div class="max-w-700px min-h-800px mx-auto border-2px border-light-600">
+    <Editor />
+  </div>
   <button class="btn" @click="getData">Button</button>
   <button class="btn" @click="getUser"> user</button>
 </template>
-<script setup lang="ts">
+<script setup >
+  import Editor from '@/components/Editor'
   const { find } = useStrapi()
   const getData = async () => {
     const res = await find('posts')

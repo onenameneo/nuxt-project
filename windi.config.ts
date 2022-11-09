@@ -10,4 +10,11 @@ module.exports = {
     prefix: "",
     darkTheme: "dark",
   },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true
+      }
+    }
+  }
 }

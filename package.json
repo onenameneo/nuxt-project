@@ -12,5 +12,13 @@
     "daisyui": "^2.38.1",
     "nuxt": "3.0.0-rc.13",
     "nuxt-windicss": "^2.5.3"
+  },
+  "dependencies": {
+    "@editorjs/delimiter": "^1.2.0",
+    "@editorjs/editorjs": "^2.25.0",
+    "@editorjs/embed": "^2.5.3",
+    "@editorjs/header": "^2.6.2",
+    "@editorjs/paragraph": "^2.8.0",
+    "@pinia/nuxt": "^0.4.3"
   }
 }
