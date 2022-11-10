@@ -3,7 +3,10 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "types": [
-      "nuxt-windicss"
+      "nuxt-windicss",
+      "@nuxt/types",
+      "@nuxtjs/i18n",
     ]
-  }
+  },
+  "esModuleInterop": true
 }

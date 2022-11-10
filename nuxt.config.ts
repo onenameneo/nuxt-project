@@ -7,5 +7,14 @@ export default defineNuxtConfig({
   strapi: {
     cookie: {},
     cookieName: 'strapi_jwt'
+  },
+  vite: {
+    server: {
+      proxy: {
+        '/uploads': {
+          target: 'http://localhost:1337/'
+        }
+      }
+    }
   }
 })
