@@ -2,7 +2,6 @@
   <div class="w-full h-full" id="editorjs"></div>
 </template>
 <script setup>
-  import { onMounted, nextTick, watch, defineProps } from 'vue'
   
   let EditorJS = null
   let Embed = null
@@ -19,7 +18,7 @@
     console.log(Header)
     Embed = await import('@editorjs/embed')
     Paragraph = await import('@editorjs/paragraph')
-    Delimiter = await import('@editorjs/delimiter')
+    Delimiter = await import('@editorjs/delimiter') 
     ImageTool = await import('@editorjs/image')
     AlignmentTuneTool = await import('editorjs-text-alignment-blocktune')
   }

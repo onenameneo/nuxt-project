@@ -34,9 +34,15 @@
   <button class="btn" @click="getData">Button</button>
   <button class="btn" @click="getUser"> user</button>
   <button class="btn" @click="save">Save</button>
+  <button class="btn" @click="getPost">getPost</button>
 </template>
 <script setup >
   import Editor from '@/components/Editor'
+
+  definePageMeta({
+    middleware: 'index'
+  })
+
   const editor = ref(null)
   const { findOne, update } = useStrapi()
   const preData = ref(null)
@@ -58,5 +64,16 @@
       content: JSON.stringify(data)
      })
   }
+  
+  const getPost = async () => {
+    const { data } = await useAuthFetch('/api/posts/1', {
+      transform: (res) => {
+        return res.data
+      },
+      pick: ['attributes']
+    })
+    console.log('data', data.value)
+  }
+  getPost()
 
 </script>

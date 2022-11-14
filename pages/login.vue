@@ -34,12 +34,13 @@
 </template>
 <script setup>
   import { reactive } from 'vue'
+  import { login } from '@/api/auth'
 
   const userState = reactive({
     identifier: '',
     password: ''
   })
-  const { login } = useStrapiAuth()
+  // const { login } = useStrapiAuth()
   const router = useRouter()
   const onSubmit = async () => {
     try {

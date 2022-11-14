@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     'nuxt-windicss',
-    '@nuxtjs/strapi'
+    '@nuxtjs/strapi',
+    '@sidebase/nuxt-auth'
   ],
   strapi: {
     url: 'http://localhost:3000',
@@ -16,20 +17,8 @@ export default defineNuxtConfig({
         changeOrigin: true
       },
       '/uploads': {
-        target: 'http://localhost:1337/uploads'
-      }
-    }
-  },
-  vite: {
-    server: {
-      proxy: {
-        '/api': {
-          target: 'http://localhost:1338',
-          changeOrigin: true
-        },
-        '/uploads': {
-          target: 'http://localhost:1337/uploads'
-        }
+        target: 'http://localhost:1337/uploads',
+        changeOrigin: true
       }
     }
   }

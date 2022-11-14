@@ -10,8 +10,9 @@
   "devDependencies": {
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/strapi": "^1.6.1",
+    "@sidebase/nuxt-auth": "^0.0.1-beta.7",
     "daisyui": "^2.38.1",
-    "nuxt": "3.0.0-rc.13",
+    "nuxt": "^3.0.0-rc.13",
     "nuxt-windicss": "^2.5.3",
     "vue-i18n": "^9.2.2"
   },
