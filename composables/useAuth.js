@@ -1,23 +1,33 @@
 import { useCookie, useFetch } from '#app'
-const baseUrl = process.env?.NUXT_PUBLIC_API_BASE || 'http://localhost:1337';
+const baseURL = process.env?.NUXT_PUBLIC_API_BASE || 'http://localhost:1337';
 
-export const useAuthFetch = (url) => {
+export const useAuthFetch = (url, opts) => {
   const token = useCookie('token')
-  return useFetch(`${baseUrl}/${url}`, {
+  return useFetch(url, {
+    ...opts,
+    baseURL,
+    immediate: false,
+    initialCache: false,
     onRequest({ options }) {
-      options.headers = options.headers || {}
+      if (opts.headers) {
+        options.headers = { ...opts.headers }
+      } else {
+        options.headers = options.headers || {}
+      }
       if (token.value) options.headers.authorization = `Bear ${token.value}`
     },
     onRequestError(error) {
       if (process.client) {
-        alert(error.message)
+        alert('Network Error!')
       }
     },
     onResponse(res) {
+      console.log('res', res)
       return res.data
     },
     onResponseError(error) {
       if (process.client) {
+        console.log('error', error.error)
         alert(error.message)
       }
     }

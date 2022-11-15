@@ -33,27 +33,20 @@
   </div>
 </template>
 <script setup>
-  import { reactive } from 'vue'
-  import { useLogin } from '@/api/auth'
+  import { login } from '@/api/auth'
 
   const userState = reactive({
     identifier: '',
     password: ''
   })
-  // const { login } = useStrapiAuth()
-  const router = useRouter()
-
-  const { refresh } = await useFetch(() => '/api/auth/local', {
-    method: 'post',
-    body: { identifier: userState.identifier, password: userState.password }
-  })
 
   const onSubmit = async () => {
     try {
-      refresh()
-      router.push('/')
-    } catch (e) {
-      console.log('error')
+      const res = await login({ identifier: userState.identifier, password: userState.password })
+      navigateTo('/')
+    } catch (error) {
+      console.log('error', error)
     }
+    
   }
 </script>
