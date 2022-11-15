@@ -105,6 +105,6 @@
 </script>
 <style scoped>
 .btn {
-  @apply mt-16px py-6px px-12px border-lg border-2px border-light-200 transition duration-300 hover:border-black hover:bg-black hover:text-white active:border-black focus:border-black focus-visible:border-black visited:border-black
+  @apply mt-[16px] py-[6px] px-[12px] border-2 border-[2px] transition duration-300 hover:border-black hover:bg-black hover:text-white active:border-black focus:border-black focus-visible:border-black visited:border-black
 }
 </style>

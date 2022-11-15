@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-800px">
+  <div class="container mx-auto max-w-[800px] h-[2000px]">
     <div class="hero min-h-screen">
       <div class="hero-content flex-col lg:flex-row-reverse">
         <div class="text-center lg:text-left">
@@ -34,7 +34,7 @@
 </template>
 <script setup>
   import { reactive } from 'vue'
-  import { login } from '@/api/auth'
+  import { useLogin } from '@/api/auth'
 
   const userState = reactive({
     identifier: '',
@@ -42,10 +42,18 @@
   })
   // const { login } = useStrapiAuth()
   const router = useRouter()
+
+  const { refresh } = await useFetch(() => '/api/auth/local', {
+    method: 'post',
+    body: { identifier: userState.identifier, password: userState.password }
+  })
+
   const onSubmit = async () => {
     try {
-      await login({ identifier: userState.identifier, password: userState.password })
+      refresh()
       router.push('/')
-    } catch (e) {}
+    } catch (e) {
+      console.log('error')
+    }
   }
 </script>
