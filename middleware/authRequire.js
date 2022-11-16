@@ -1,8 +1,7 @@
 import { useCookie } from '#app';
 
 export default defineNuxtRouteMiddleware((to) => {
-  const token = useCookie('token');
-  console.log('token', token.value)
+  const token = useCookie('token')
   if (!token.value) {
     return '/login';
   }

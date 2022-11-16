@@ -1,5 +1,10 @@
-let userInfo = {}
+let user = {}
 if (process.client) {
-  userInfo = JSON.parse(localStorage.getItem('user'))
+  user = JSON.parse(localStorage.getItem('user'))
 }
-export const useUser = () => useState('user', () => userInfo)
+export const useUser = () => useState('user', () => user)
+
+let app = {
+  locale: 'tc'
+}
+export const useApp = () => useState('app', () => app)

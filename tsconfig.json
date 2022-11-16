@@ -5,6 +5,7 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/i18n",
+      "@nuxt/image-edge"
     ]
   },
   "esModuleInterop": true

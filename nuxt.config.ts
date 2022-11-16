@@ -1,14 +1,9 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/strapi',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image-edge'
   ],
-  strapi: {
-    url: 'http://localhost:3000',
-    cookie: {},
-    cookieName: 'strapi_jwt'
-  },
   nitro: {
     devProxy: {
       '/api': {
@@ -19,6 +14,6 @@ export default defineNuxtConfig({
         target: 'http://localhost:1337/uploads',
         changeOrigin: true
       }
-    }
-  }
+    },
+  },
 })
