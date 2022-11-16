@@ -24,7 +24,6 @@
     "@editorjs/header": "^2.6.2",
     "@editorjs/image": "^2.6.2",
     "@editorjs/paragraph": "^2.8.0",
-    "@nuxtjs/svg-sprite": "^0.5.2",
     "@pinia/nuxt": "^0.4.3",
     "editorjs-text-alignment-blocktune": "^1.0.3",
     "vee-validate": "^4.7.3",
