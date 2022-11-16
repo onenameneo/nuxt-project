@@ -12,7 +12,8 @@
               <label class="label">
                 <span class="label-text">Email</span>
               </label>
-              <input type="text" placeholder="email" class="input input-bordered" v-model="userState.identifier" />
+              <input type="text" placeholder="email" class="input input-bordered" v-model="identifier" :class="{ 'input-error': errorMessage }" />
+              <span class="text-red-500">{{ errorMessage }}</span>
             </div>
             <div class="form-control">
               <label class="label">
@@ -34,11 +35,15 @@
 </template>
 <script setup>
   import { login } from '@/api/auth'
+  import { useField } from 'vee-validate';
+  import { string } from 'yup'
 
   const userState = reactive({
     identifier: '',
     password: ''
   })
+
+  const { errorMessage, value:identifier, errors } = useField('identifier', string().required().email())
 
   const onSubmit = async () => {
     try {

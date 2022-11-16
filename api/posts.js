@@ -5,3 +5,13 @@ export const getPosts = ({ pageNum }) => {
     params: { pageNum }
   })
 }
+
+export const getPost = (postId) => {
+  return http.get(`/api/posts/${postId}`)
+}
+
+export const updatePost = (postId, post) => {
+  return http.put(`/api/posts/${postId}`, {
+    data: post
+  })
+}

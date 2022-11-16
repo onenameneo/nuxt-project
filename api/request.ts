@@ -20,8 +20,10 @@ interface requestOpts {
 const createFetch = (method: methods) => {
   return (url: string, opts: requestOpts) => {
     const token = useCookie(TOKEN_KEY)
+    console.log('token', token.value)
     const headers = opts?.headers || {}
-    if (token.value) headers.authorization = `Bearer ${token}`
+    if (token.value) headers.authorization = `Bearer ${token.value}`
+    console.log('headers', headers)
     return $fetch(url, {
       baseURL,
       method,

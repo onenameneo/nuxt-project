@@ -4,8 +4,7 @@
   "compilerOptions": {
     "types": [
       "@nuxt/types",
-      "@nuxtjs/i18n",
-      "@nuxt/image-edge"
+      "@nuxtjs/i18n"
     ]
   },
   "esModuleInterop": true

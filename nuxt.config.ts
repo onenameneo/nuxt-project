@@ -1,8 +1,9 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+import svgLoader from "vite-svg-loader"
+
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image-edge'
+    '@nuxtjs/tailwindcss'
   ],
   nitro: {
     devProxy: {
@@ -16,4 +17,13 @@ export default defineNuxtConfig({
       }
     },
   },
+  css: [
+    '@/assets/style/main.css'
+  ],
+  vite: {
+    plugins: [svgLoader()]
+  },
+  plugins: [
+    // { src: '~/plugins/vue-lazyload.client.js', mode: 'client' }
+  ]
 })
