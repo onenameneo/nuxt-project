@@ -1,16 +1,14 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <NuxtLayout />
 </template>
 
 <style>
-  .layout-enter-active,
-  .layout-leave-active {
-    transition: all 0.4s ease-in-out;
+  .page-enter-active,
+  .page-leave-active {
+    transition: all .4s ease-in-out;
   }
-  .layout-enter-from,
-  .layout-leave-to {
+  .page-enter-from,
+  .page-leave-to {
     transform: translateX(60px);
     opacity: 0;
   }

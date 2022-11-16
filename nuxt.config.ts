@@ -2,6 +2,9 @@
 import svgLoader from "vite-svg-loader"
 
 export default defineNuxtConfig({
+  app: {
+    pageTransition: { name: 'page' }
+  },
   modules: [
     '@nuxtjs/tailwindcss'
   ],
